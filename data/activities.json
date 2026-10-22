@@ -1,0 +1,15 @@
+[
+  {
+    "minimum": 99,
+    "discount": 15,
+    "rule": "threshold-reduction",
+    "applicableProductIds": [],
+    "stackableWithCoupon": false,
+    "id": "act-01",
+    "name": "秋日囤零食",
+    "description": "指定零食满 99 减 15，演示活动不可实际兑换。",
+    "startsAt": "2026-10-01T00:00:00.000+08:00",
+    "endsAt": "2026-11-01T00:00:00.000+08:00",
+    "status": "enabled"
+  }
+]

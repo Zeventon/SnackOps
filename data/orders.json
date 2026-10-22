@@ -1,0 +1,27 @@
+[
+  {
+    "items": [
+      {
+        "productId": "p-01",
+        "quantity": 1,
+        "unitPrice": 39.9
+      },
+      {
+        "productId": "p-02",
+        "quantity": 1,
+        "unitPrice": 22.8
+      }
+    ],
+    "logisticsStatus": "运输中",
+    "afterSalesStatus": "none",
+    "id": "SN100001",
+    "userId": "user-01",
+    "productIds": [
+      "p-01",
+      "p-02"
+    ],
+    "total": 62.7,
+    "status": "运输中",
+    "logisticsId": "log-01"
+  }
+]

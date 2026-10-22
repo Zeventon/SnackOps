@@ -1,0 +1,95 @@
+[
+  {
+    "flavor": "原味",
+    "tags": [
+      "分装",
+      "坚果"
+    ],
+    "ingredients": [
+      "核桃仁",
+      "腰果",
+      "巴旦木",
+      "花生"
+    ],
+    "nutrition": {
+      "per": "100g",
+      "energyKj": 2500,
+      "proteinG": 18,
+      "fatG": 49,
+      "carbohydrateG": 22,
+      "sugarG": 4,
+      "sodiumMg": 12
+    },
+    "nutritionNote": "仅为功能测试的虚构营养数据，不作为膳食建议；实际以包装为准。",
+    "id": "p-01",
+    "name": "每日混合坚果 25g × 7袋",
+    "category": "坚果炒货",
+    "price": 39.9,
+    "stock": 236,
+    "allergens": [
+      "坚果",
+      "花生"
+    ]
+  },
+  {
+    "flavor": "草莓酸奶",
+    "tags": [
+      "冻干",
+      "酸甜"
+    ],
+    "ingredients": [
+      "酸奶",
+      "草莓",
+      "白砂糖"
+    ],
+    "nutrition": {
+      "per": "100g",
+      "energyKj": 1800,
+      "proteinG": 10,
+      "fatG": 14,
+      "carbohydrateG": 62,
+      "sugarG": 38,
+      "sodiumMg": 110
+    },
+    "nutritionNote": "仅为功能测试的虚构营养数据，不作为膳食建议；实际以包装为准。",
+    "id": "p-02",
+    "name": "冻干草莓酸奶块 60g",
+    "category": "果干乳品",
+    "price": 22.8,
+    "stock": 128,
+    "allergens": [
+      "牛奶"
+    ]
+  },
+  {
+    "flavor": "海盐",
+    "tags": [
+      "酥脆",
+      "分享装"
+    ],
+    "ingredients": [
+      "小麦粉",
+      "植物油",
+      "海盐",
+      "酵母"
+    ],
+    "nutrition": {
+      "per": "100g",
+      "energyKj": 1900,
+      "proteinG": 8,
+      "fatG": 18,
+      "carbohydrateG": 66,
+      "sugarG": 3,
+      "sodiumMg": 620
+    },
+    "nutritionNote": "仅为功能测试的虚构营养数据，不作为膳食建议；实际以包装为准。",
+    "id": "p-03",
+    "name": "海盐苏打饼干 300g",
+    "category": "饼干糕点",
+    "price": 16.9,
+    "stock": 420,
+    "allergens": [
+      "小麦"
+    ]
+  }
+]

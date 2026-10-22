@@ -1,0 +1,2 @@
+import { Inbox } from "lucide-react";
+export function EmptyState({ title = "暂无记录", description = "运行一次测试后，结果会显示在这里。" }: { title?: string; description?: string }) { return <div className="flex min-h-48 flex-col items-center justify-center gap-3 px-5 text-center"><Inbox size={28} className="text-stone-400" /><h3 className="font-medium">{title}</h3><p className="text-sm text-muted-foreground">{description}</p></div>; }

@@ -1,0 +1,116 @@
+[
+  {
+    "id": "query-order",
+    "name": "查询订单",
+    "description": "读取演示订单数据（旧注册项，已迁移到下划线命名工具）",
+    "kind": "read",
+    "enabled": false,
+    "testInput": {}
+  },
+  {
+    "id": "query-logistics",
+    "name": "查询物流",
+    "description": "读取物流节点与配送状态（旧注册项，已迁移到下划线命名工具）",
+    "kind": "read",
+    "enabled": false,
+    "testInput": {}
+  },
+  {
+    "id": "query-policy",
+    "name": "查询售后政策",
+    "description": "检索门店演示售后政策（旧注册项，已迁移到下划线命名工具）",
+    "kind": "read",
+    "enabled": false,
+    "testInput": {}
+  },
+  {
+    "id": "query-product",
+    "name": "检索商品",
+    "description": "查询商品与过敏原资料（旧注册项，已迁移到下划线命名工具）",
+    "kind": "read",
+    "enabled": false,
+    "testInput": {}
+  },
+  {
+    "id": "issue-refund",
+    "name": "提交退款",
+    "description": "预留接口，尚未实现（旧注册项，已迁移到下划线命名工具）",
+    "kind": "write",
+    "enabled": false,
+    "testInput": {}
+  },
+  {
+    "id": "query_products",
+    "name": "查询商品",
+    "description": "按关键词、分类、标签、价格、库存与排除过敏原筛选商品",
+    "testInput": {
+      "keyword": "坚果"
+    },
+    "enabled": true,
+    "kind": "read"
+  },
+  {
+    "id": "query_activities",
+    "name": "查询活动",
+    "description": "查询当前有效活动与门槛、叠加规则",
+    "testInput": {},
+    "enabled": true,
+    "kind": "read"
+  },
+  {
+    "id": "query_coupons",
+    "name": "查询优惠券",
+    "description": "查询有效券；传入用户后校验新客资格",
+    "testInput": {
+      "userId": "user-02"
+    },
+    "enabled": true,
+    "kind": "read"
+  },
+  {
+    "id": "calculate_price",
+    "name": "计算价格",
+    "description": "按分计算商品小计、活动和优惠券折扣，检查库存、有效期、门槛与叠加限制",
+    "testInput": {
+      "items": [
+        {
+          "productId": "p-01",
+          "quantity": 2
+        }
+      ],
+      "userId": "user-02",
+      "couponId": "coupon-01"
+    },
+    "enabled": true,
+    "kind": "read"
+  },
+  {
+    "id": "query_orders",
+    "name": "查询订单",
+    "description": "通过订单号查询明细，可额外核对用户 ID",
+    "testInput": {
+      "orderId": "SN100001",
+      "userId": "user-01"
+    },
+    "enabled": true,
+    "kind": "read"
+  },
+  {
+    "id": "query_logistics",
+    "name": "查询物流",
+    "description": "按订单号查询演示物流节点",
+    "testInput": {
+      "orderId": "SN100001"
+    },
+    "enabled": true,
+    "kind": "read"
+  },
+  {
+    "id": "query_policies",
+    "name": "查询售后政策",
+    "description": "读取破损、缺件、退换货和退款规则",
+    "testInput": {},
+    "enabled": true,
+    "kind": "read"
+  }
+]

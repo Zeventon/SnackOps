@@ -1,0 +1,37 @@
+[
+  {
+    "id": "case-01",
+    "input": "订单 SN100001 到哪了",
+    "expectedIntent": "订单物流",
+    "expectedStatus": "success",
+    "category": "物流"
+  },
+  {
+    "id": "case-02",
+    "input": "商品破损如何退货",
+    "expectedIntent": "售后咨询",
+    "expectedStatus": "success",
+    "category": "售后"
+  },
+  {
+    "id": "case-03",
+    "input": "坚果有哪些过敏原",
+    "expectedIntent": "商品咨询",
+    "expectedStatus": "success",
+    "category": "商品"
+  },
+  {
+    "id": "case-04",
+    "input": "帮我开发票",
+    "expectedIntent": "人工协助",
+    "expectedStatus": "handoff",
+    "category": "兜底"
+  },
+  {
+    "id": "case-05",
+    "input": "帮我查询订单",
+    "expectedIntent": "订单物流",
+    "expectedStatus": "handoff",
+    "category": "信息缺失"
+  }
+]

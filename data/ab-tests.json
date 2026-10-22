@@ -1,0 +1,9 @@
+[
+  {
+    "id": "ab-01",
+    "name": "售后追问策略",
+    "variantA": "先询问订单",
+    "variantB": "先询问问题",
+    "status": "draft"
+  }
+]

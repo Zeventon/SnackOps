@@ -1,0 +1,231 @@
+[
+  {
+    "id": "run-d1a6fc9a-5c1c-4d93-8303-3e313b1e231c",
+    "input": "帮我查一下订单 SN100001 到哪里了",
+    "intent": "订单物流",
+    "status": "success",
+    "answer": "演示订单 SN100001：顺丰速运（演示），运输中。10月15日 09:20 已到达杭州转运中心，预计次日送达；此为静态演示记录。",
+    "skillId": "order-tracking",
+    "steps": [
+      {
+        "name": "理解问题",
+        "detail": "使用本地关键词规则识别意图，未调用大模型。"
+      },
+      {
+        "name": "查询订单与物流",
+        "detail": "已匹配 SN100001 的演示物流记录。"
+      },
+      {
+        "name": "生成答复",
+        "detail": "保留执行轨迹，供运营复核。"
+      }
+    ],
+    "createdAt": "2026-10-15T11:52:20.343Z",
+    "durationMs": 14,
+    "mode": "local-rules"
+  },
+  {
+    "id": "run-demo-001",
+    "input": "帮我查一下订单 SN100001 到哪里了",
+    "intent": "订单物流",
+    "status": "success",
+    "answer": "演示物流：已到达杭州转运中心。",
+    "skillId": "order-tracking",
+    "steps": [
+      {
+        "name": "演示轨迹",
+        "detail": "这是一条预置演示记录，可在运行工作台生成真实的本地执行记录。"
+      }
+    ],
+    "createdAt": "2026-10-15T02:30:00.000Z",
+    "durationMs": 12,
+    "mode": "local-rules"
+  },
+  {
+    "id": "run-demo-002",
+    "input": "收到的饼干破损了，可以处理吗",
+    "intent": "售后咨询",
+    "status": "success",
+    "answer": "请提供订单号和商品照片，由人工审核。",
+    "skillId": "after-sales",
+    "steps": [
+      {
+        "name": "演示轨迹",
+        "detail": "这是一条预置演示记录，可在运行工作台生成真实的本地执行记录。"
+      }
+    ],
+    "createdAt": "2026-10-14T22:30:00.000Z",
+    "durationMs": 15,
+    "mode": "local-rules"
+  },
+  {
+    "id": "run-demo-003",
+    "input": "每日坚果含花生吗",
+    "intent": "商品咨询",
+    "status": "success",
+    "answer": "每日混合坚果含坚果和花生。",
+    "skillId": "product-guide",
+    "steps": [
+      {
+        "name": "演示轨迹",
+        "detail": "这是一条预置演示记录，可在运行工作台生成真实的本地执行记录。"
+      }
+    ],
+    "createdAt": "2026-10-14T18:30:00.000Z",
+    "durationMs": 18,
+    "mode": "local-rules"
+  },
+  {
+    "id": "run-demo-004",
+    "input": "可以开发票吗",
+    "intent": "人工协助",
+    "status": "handoff",
+    "answer": "该问题需人工客服核实。",
+    "skillId": "human-handoff",
+    "steps": [
+      {
+        "name": "演示轨迹",
+        "detail": "这是一条预置演示记录，可在运行工作台生成真实的本地执行记录。"
+      }
+    ],
+    "createdAt": "2026-10-14T14:30:00.000Z",
+    "durationMs": 21,
+    "mode": "local-rules"
+  },
+  {
+    "id": "run-demo-005",
+    "input": "帮我查一下订单 SN100001 到哪里了",
+    "intent": "订单物流",
+    "status": "success",
+    "answer": "演示物流：已到达杭州转运中心。",
+    "skillId": "order-tracking",
+    "steps": [
+      {
+        "name": "演示轨迹",
+        "detail": "这是一条预置演示记录，可在运行工作台生成真实的本地执行记录。"
+      }
+    ],
+    "createdAt": "2026-10-14T10:30:00.000Z",
+    "durationMs": 24,
+    "mode": "local-rules"
+  },
+  {
+    "id": "run-demo-006",
+    "input": "收到的饼干破损了，可以处理吗",
+    "intent": "售后咨询",
+    "status": "success",
+    "answer": "请提供订单号和商品照片，由人工审核。",
+    "skillId": "after-sales",
+    "steps": [
+      {
+        "name": "演示轨迹",
+        "detail": "这是一条预置演示记录，可在运行工作台生成真实的本地执行记录。"
+      }
+    ],
+    "createdAt": "2026-10-14T06:30:00.000Z",
+    "durationMs": 27,
+    "mode": "local-rules"
+  },
+  {
+    "id": "run-demo-007",
+    "input": "每日坚果含花生吗",
+    "intent": "商品咨询",
+    "status": "success",
+    "answer": "每日混合坚果含坚果和花生。",
+    "skillId": "product-guide",
+    "steps": [
+      {
+        "name": "演示轨迹",
+        "detail": "这是一条预置演示记录，可在运行工作台生成真实的本地执行记录。"
+      }
+    ],
+    "createdAt": "2026-10-14T02:30:00.000Z",
+    "durationMs": 30,
+    "mode": "local-rules"
+  },
+  {
+    "id": "run-demo-008",
+    "input": "可以开发票吗",
+    "intent": "人工协助",
+    "status": "handoff",
+    "answer": "该问题需人工客服核实。",
+    "skillId": "human-handoff",
+    "steps": [
+      {
+        "name": "演示轨迹",
+        "detail": "这是一条预置演示记录，可在运行工作台生成真实的本地执行记录。"
+      }
+    ],
+    "createdAt": "2026-10-13T22:30:00.000Z",
+    "durationMs": 33,
+    "mode": "local-rules"
+  },
+  {
+    "id": "run-demo-009",
+    "input": "帮我查一下订单 SN100001 到哪里了",
+    "intent": "订单物流",
+    "status": "success",
+    "answer": "演示物流：已到达杭州转运中心。",
+    "skillId": "order-tracking",
+    "steps": [
+      {
+        "name": "演示轨迹",
+        "detail": "这是一条预置演示记录，可在运行工作台生成真实的本地执行记录。"
+      }
+    ],
+    "createdAt": "2026-10-13T18:30:00.000Z",
+    "durationMs": 36,
+    "mode": "local-rules"
+  },
+  {
+    "id": "run-demo-010",
+    "input": "收到的饼干破损了，可以处理吗",
+    "intent": "售后咨询",
+    "status": "success",
+    "answer": "请提供订单号和商品照片，由人工审核。",
+    "skillId": "after-sales",
+    "steps": [
+      {
+        "name": "演示轨迹",
+        "detail": "这是一条预置演示记录，可在运行工作台生成真实的本地执行记录。"
+      }
+    ],
+    "createdAt": "2026-10-13T14:30:00.000Z",
+    "durationMs": 39,
+    "mode": "local-rules"
+  },
+  {
+    "id": "run-demo-011",
+    "input": "每日坚果含花生吗",
+    "intent": "商品咨询",
+    "status": "success",
+    "answer": "每日混合坚果含坚果和花生。",
+    "skillId": "product-guide",
+    "steps": [
+      {
+        "name": "演示轨迹",
+        "detail": "这是一条预置演示记录，可在运行工作台生成真实的本地执行记录。"
+      }
+    ],
+    "createdAt": "2026-10-13T10:30:00.000Z",
+    "durationMs": 42,
+    "mode": "local-rules"
+  },
+  {
+    "id": "run-demo-012",
+    "input": "可以开发票吗",
+    "intent": "人工协助",
+    "status": "handoff",
+    "answer": "该问题需人工客服核实。",
+    "skillId": "human-handoff",
+    "steps": [
+      {
+        "name": "演示轨迹",
+        "detail": "这是一条预置演示记录，可在运行工作台生成真实的本地执行记录。"
+      }
+    ],
+    "createdAt": "2026-10-13T06:30:00.000Z",
+    "durationMs": 45,
+    "mode": "local-rules"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "isNewCustomer": false,
+    "historyOrderIds": [
+      "SN100001"
+    ],
+    "preferences": {
+      "flavors": [
+        "原味"
+      ],
+      "avoidAllergens": [],
+      "budget": 100
+    },
+    "id": "user-01",
+    "name": "林小满（演示）",
+    "tier": "常客"
+  },
+  {
+    "isNewCustomer": true,
+    "historyOrderIds": [],
+    "preferences": {
+      "flavors": [
+        "酸甜"
+      ],
+      "avoidAllergens": [],
+      "budget": 100
+    },
+    "id": "user-02",
+    "name": "陈果果（演示）",
+    "tier": "新客"
+  }
+]

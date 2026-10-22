@@ -1,0 +1,5 @@
+{
+  "mode": "local-rules",
+  "handoffOnUnknown": true,
+  "message": "未识别的问题建议转人工客服。"
+}

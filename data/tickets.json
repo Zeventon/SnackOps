@@ -1,0 +1,29 @@
+[
+  {
+    "id": "TK-1024",
+    "subject": "坚果礼盒外包装破损",
+    "customer": "林小满（演示）",
+    "category": "售后处理",
+    "priority": "high",
+    "status": "pending",
+    "updatedAt": "2026-10-15T02:30:00.000Z"
+  },
+  {
+    "id": "TK-1023",
+    "subject": "订单配送地址需要修改",
+    "customer": "陈果果（演示）",
+    "category": "订单服务",
+    "priority": "normal",
+    "status": "pending",
+    "updatedAt": "2026-10-15T02:30:00.000Z"
+  },
+  {
+    "id": "TK-1022",
+    "subject": "咨询酸奶块的过敏原",
+    "customer": "周一（演示）",
+    "category": "商品咨询",
+    "priority": "normal",
+    "status": "resolved",
+    "updatedAt": "2026-10-15T02:30:00.000Z"
+  }
+]

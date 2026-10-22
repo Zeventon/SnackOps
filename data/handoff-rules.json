@@ -1,0 +1,39 @@
+[
+  {
+    "id": "handoff-complaint",
+    "name": "投诉优先接管",
+    "triggers": [
+      "投诉",
+      "过敏",
+      "异物",
+      "不适"
+    ],
+    "priority": "high",
+    "action": "记录诉求与证据，优先交人工；不推诿，不作诊断。",
+    "enabled": true
+  },
+  {
+    "id": "handoff-refund",
+    "name": "退款人工审批",
+    "triggers": [
+      "退款",
+      "赔偿",
+      "缺件"
+    ],
+    "priority": "normal",
+    "action": "收集订单号和必要凭证，交人工审核，不承诺已退款。",
+    "enabled": true
+  },
+  {
+    "id": "handoff-fraud",
+    "name": "疑似中奖诈骗",
+    "triggers": [
+      "中奖",
+      "兑奖",
+      "保证金"
+    ],
+    "priority": "high",
+    "action": "提醒不要转账、不要提供敏感信息、不承诺兑奖，通过官方渠道核验。",
+    "enabled": true
+  }
+]

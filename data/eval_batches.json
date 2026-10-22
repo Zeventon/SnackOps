@@ -1,0 +1,10 @@
+[
+  {
+    "id": "eval-demo-01",
+    "name": "初始回归样例（演示）",
+    "total": 5,
+    "passed": 5,
+    "createdAt": "2026-10-15T02:30:00.000Z",
+    "mode": "local-rules"
+  }
+]

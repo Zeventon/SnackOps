@@ -1,0 +1,9 @@
+import { store } from "@/lib/store";
+import { formatDate } from "@/lib/utils";
+import { PageHeading } from "@/components/page-heading";
+import { EvalButton } from "@/components/actions";
+import { Badge } from "@/components/ui/badge";
+import { EmptyState } from "@/components/ui/states";
+export const dynamic = "force-dynamic";
+export const metadata = { title: "评估中心" };
+export default async function Evals() { const [cases, batches] = await Promise.all([store.read("eval_cases"), store.read("eval_batches")]); return <><PageHeading eyebrow="EVALUATION CENTER" title="评估中心" description="对本地 Planner 执行真实回归，校验意图和运行状态；当前不评估答复语义质量。" action={<EvalButton />} /><section className="panel mb-6"><div className="panel-heading"><h2>评估批次</h2><Badge>{batches.length} 次</Badge></div>{batches.length ? <div className="overflow-x-auto"><table className="data-table"><thead><tr><th>名称</th><th>通过用例</th><th>通过率</th><th>执行时间</th></tr></thead><tbody>{batches.map((batch) => <tr key={batch.id}><td>{batch.name}</td><td>{batch.passed} / {batch.total}</td><td><Badge tone={batch.total > 0 && batch.passed === batch.total ? "green" : "orange"}>{batch.total ? `${Math.round(batch.passed / batch.total * 100)}%` : "无用例"}</Badge></td><td className="whitespace-nowrap">{formatDate(batch.createdAt)}</td></tr>)}</tbody></table></div> : <EmptyState title="尚未运行评估" description="点击运行评估，执行第一轮回归测试。" />}</section><section className="panel"><div className="panel-heading"><h2>测试用例</h2><Badge>{cases.length} 项</Badge></div>{cases.length ? <div className="overflow-x-auto"><table className="data-table"><thead><tr><th>用例</th><th>输入问题</th><th>预期意图</th><th>预期状态</th></tr></thead><tbody>{cases.map((item) => <tr key={item.id}><td>{item.id}</td><td>{item.input}</td><td>{item.expectedIntent}</td><td>{item.expectedStatus === "success" ? "成功" : item.expectedStatus === "failed" ? "失败" : "转人工"}</td></tr>)}</tbody></table></div> : <EmptyState title="暂无测试用例" description="添加用例后再运行评估。" />}</section></>; }

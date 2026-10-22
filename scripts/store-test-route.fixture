@@ -1,0 +1,36 @@
+import * as fs from "node:fs/promises";
+import path from "node:path";
+import { z } from "zod";
+import { JsonStore } from "@/lib/json-store";
+export const runtime = "nodejs";
+const schema = { counter: z.object({ count: z.number().int().nonnegative(), payload: z.string() }), independent: z.object({ count: z.number().int().nonnegative(), payload: z.string() }) };
+export async function POST(request: Request) {
+  if (!process.env.SNACKOPS_STORE_TEST_TOKEN || request.headers.get("authorization") !== `Bearer ${process.env.SNACKOPS_STORE_TEST_TOKEN}`) return new Response(null, { status: 404 });
+  const directory = process.env.SNACKOPS_STORE_TEST_DIR!;
+  const store = new JsonStore(directory, schema);
+  const { action } = await request.json();
+  if (action === "init") { await store.write("counter", { count: 0, payload: "零食".repeat(32768) }); await store.write("independent", { count: 0, payload: "" }); return Response.json({ ok: true }); }
+  if (action === "increment") { const result = await store.update("counter", async (current) => { await new Promise((resolve) => setTimeout(resolve, 8)); return { ...current, count: current.count + 1 }; }); return Response.json({ count: result.count }); }
+  if (action === "read") { const result = await store.read("counter"); return Response.json({ count: result.count }); }
+  if (action === "raw-read") { const raw = await fs.readFile(path.join(directory, "counter.json"), "utf8"); const value = JSON.parse(raw); return Response.json({ count: value.count, valid: schema.counter.safeParse(value).success }); }
+  if (action === "rename-failure") {
+    let temporaryWasValid = false;
+    const broken = new JsonStore(directory, schema, { ...fs, rename: async (source) => { temporaryWasValid = schema.counter.safeParse(JSON.parse(await fs.readFile(source, "utf8"))).success; throw new Error("Injected rename failure"); } });
+    try { await broken.update("counter", (value) => ({ ...value, count: 999 })); } catch { return Response.json({ expectedFailure: true, temporaryWasValid }, { status: 503 }); }
+  }
+  if (action === "invalid-write") { try { await store.write("counter", { count: -1, payload: "bad" }); } catch { return Response.json({ expectedFailure: true }, { status: 400 }); } }
+  if (action === "throw-update") { try { await store.update("counter", () => { throw new Error("Injected updater failure"); }); } catch { return Response.json({ expectedFailure: true }, { status: 503 }); } }
+  if (action === "independent-locks") {
+    let entered!: () => void; const gate = new Promise<void>((resolve) => { entered = resolve; });
+    let release!: () => void; const hold = new Promise<void>((resolve) => { release = resolve; });
+    const first = store.update("counter", async (value) => { entered(); await hold; return value; });
+    await gate;
+    let independentCompleted = false;
+    const second = store.update("independent", (value) => ({ ...value, count: value.count + 1 })).then(() => { independentCompleted = true; });
+    await Promise.race([second, new Promise((resolve) => setTimeout(resolve, 1000))]);
+    const passed = independentCompleted; release(); await Promise.all([first, second]);
+    return Response.json({ independentCompleted: passed });
+  }
+  if (action === "cleanup-check") return Response.json({ temporaryFiles: (await fs.readdir(directory)).filter((file) => file.endsWith(".tmp")) });
+  return new Response(null, { status: 400 });
+}

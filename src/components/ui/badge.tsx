@@ -1,0 +1,2 @@
+import { cn } from "@/lib/utils";
+export function Badge({ children, tone = "neutral" }: { children: React.ReactNode; tone?: "green" | "orange" | "neutral" | "red" }) { return <span className={cn("inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium", { "bg-emerald-50 text-emerald-700": tone === "green", "bg-orange-50 text-orange-800": tone === "orange", "bg-stone-100 text-stone-600": tone === "neutral", "bg-red-50 text-red-700": tone === "red" })}>{children}</span>; }

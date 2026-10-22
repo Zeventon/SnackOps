@@ -1,0 +1,14 @@
+[
+  {
+    "type": "fixed",
+    "startsAt": "2026-10-01T00:00:00.000+08:00",
+    "endsAt": "2026-11-01T00:00:00.000+08:00",
+    "applicableProductIds": [],
+    "newCustomerOnly": true,
+    "id": "coupon-01",
+    "name": "新客尝鲜券",
+    "minimum": 59,
+    "discount": 10,
+    "status": "enabled"
+  }
+]
